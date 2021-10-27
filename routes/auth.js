@@ -48,7 +48,6 @@ router.post(
         },
       };
       const authToken = jwt.sign(data, JWT_SECRET); // sync signed method
-
       res.json({ authToken });
     } catch (error) {
       console.log(error.message);
@@ -58,7 +57,7 @@ router.post(
   }
 );
 
-//ROUTE 1: authenticate user using: POST: 'api/auth/login'
+//ROUTE 2: authenticate user using: POST: 'api/auth/login'
 router.post(
   "/login",
   [
@@ -104,7 +103,7 @@ router.post(
   }
 );
 
-//ROUTE 1: get login user using: GET: 'api/auth/getuser'
+//ROUTE 4: get login user using: GET: 'api/auth/getuser'
 
 router.post("/getuser", fetchUser, async (req, res) => {
   try {
